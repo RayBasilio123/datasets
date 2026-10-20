@@ -1,0 +1,135 @@
+{
+  "B1": {
+    "tecnologia": "celulas mecanicas",
+    "publica": false,
+    "frequencia": "2h",
+    "bruto": {
+      "arquivo": "raw/B1_dados_2h_aggregado_final.csv",
+      "separador": ",",
+      "coluna_data": "Data",
+      "inicio": "2023-05-23 12:00:00",
+      "fim": "2025-06-22 00:00:00",
+      "linhas": 7244,
+      "colunas": 52
+    },
+    "alvo": {"silica": "P_CONFLTTO_QQ_GLOBAL_SIO2", "ferro": "P_CONFLTTO_QQ_GLOBAL_FE"},
+    "colunas_categoricas": [
+      "TO_MF6401_M1_EST1", "TO_MF6402_M1_EST1", "TO_MF6411_M1_EST1", "TO_MF6412_M1_EST1",
+      "TO_MF6421_M1_EST1", "TO_MF6422_M1_EST1", "TO_MF6431_M1_EST1", "TO_MF6432_M1_EST1",
+      "TO_BO6311_EST1"
+    ],
+    "colunas_laboratorio": [
+      "P_A6302FN_QQ_GLOBAL_SIO2", "P_A4412TO_QQ_GLOBAL_SIO2", "P_A4412TO_FG_GLOBAL_+0.15MM",
+      "P_A4412TO_FG_GLOBAL_-0.045MM", "P_A4412TO_QQ_GLOBAL_FE", "P_ACM4181_QQ_GLOBAL_FE",
+      "P_ACM4181_QQ_GLOBAL_SIO2"
+    ],
+    "colunas_excluir": [],
+    "processado": {"silica": "processed/silica/B1.parquet", "ferro": "processed/ferro/B1.parquet", "pontos": 9124}
+  },
+  "B2": {
+    "tecnologia": "colunas de flotacao",
+    "publica": true,
+    "fonte_publica": "Kaggle - Quality Prediction in a Mining Process (agregado por hora)",
+    "frequencia": "h",
+    "bruto": {
+      "arquivo": "raw/B2_data_hourly.csv",
+      "separador": ",",
+      "coluna_data": "date",
+      "inicio": "2017-03-10 01:00:00",
+      "fim": "2017-09-09 23:00:00",
+      "linhas": 4097,
+      "colunas": 24
+    },
+    "alvo": {"silica": "% Silica Concentrate", "ferro": "% Iron Concentrate"},
+    "colunas_categoricas": [],
+    "colunas_laboratorio": ["% Iron Feed", "% Silica Feed"],
+    "colunas_excluir": [],
+    "processado": {"silica": "processed/silica/B2.parquet", "ferro": "processed/ferro/B2.parquet", "pontos": 4415}
+  },
+  "B3": {
+    "tecnologia": "colunas de flotacao",
+    "publica": false,
+    "frequencia": "2h",
+    "frequencia_bruto": "h",
+    "bruto": {
+      "arquivo": "raw/B3_flotacao_conceicao.csv",
+      "separador": ",",
+      "coluna_data": "date",
+      "inicio": "2022-01-01 00:00:00",
+      "fim": "2023-07-25 23:00:00",
+      "linhas": 13704,
+      "colunas": 61
+    },
+    "alvo": {"silica": "SiO2 C flot (%)", "ferro": "Fe C flot (%)"},
+    "colunas_categoricas": [],
+    "colunas_com_valores_absurdos": [
+      "Amido flot (g/t)", "Amina flot (g/t)", "Taxa alim na flot (alim nova) (t/h)",
+      "Tem Res Rougher 1 (min)", "Tem Res Rougher 2 (min)", "Tem Res Cleaner 1 (min)",
+      "Tem Res Cleaner 2 (min)", "Tem Res Re-Cleaner  (min)",
+      "Est Esp Rougher 1  (m/s)", "Est Esp Rougher 2 (m/s)", "Est Esp Cleaner 1 (m/s)",
+      "Est Esp Cleaner 2 (m/s)", "Est Esp Re-Cleaner (m/s)"
+    ],
+    "colunas_excluir": [],
+    "processado": {"silica": "processed/silica/B3.parquet", "ferro": "processed/ferro/B3.parquet", "pontos": 6852}
+  },
+  "B4": {
+    "tecnologia": "celulas mecanicas (subconjunto continuo da B1, tags renomeadas)",
+    "publica": false,
+    "frequencia": "2h",
+    "bruto": {
+      "arquivo": "raw/B4_dados_consolidados_com_MM.csv",
+      "separador": ",",
+      "coluna_data": "Data",
+      "inicio": "2024-11-23 19:00:00",
+      "fim": "2025-06-21 23:00:00",
+      "linhas": 1909,
+      "colunas": 41
+    },
+    "alvo": {"silica": "P_CONFLTTO_QQ_GLOBAL_SIO2", "ferro": "P_CONFLTTO_QQ_GLOBAL_FE"},
+    "colunas_categoricas": [
+      "estado_motor_MF6401", "estado_motor_MF6402", "estado_motor_MF6411", "estado_motor_MF6412",
+      "estado_motor_MF6421", "estado_motor_MF6422", "estado_motor_MF6431", "estado_motor_MF6432",
+      "estado_bomba_alimentacao"
+    ],
+    "colunas_media_movel": [
+      "conc_silica_MM", "granulometria_01_MM", "granulometria_02_MM", "silica_rejeito_MM",
+      "conc_fe_MM", "ferro_alimentacao_MM", "ferro_rejeito_MM"
+    ],
+    "colunas_excluir": {
+      "conc_silica_MM": "media movel do proprio alvo (vazamento)",
+      "conc_fe_MM": "media movel do Fe do concentrado (vazamento)",
+      "grupo_mudanca": "contador, nao e variavel de processo"
+    },
+    "processado": {"silica": "processed/silica/B4.parquet", "ferro": "processed/ferro/B4.parquet", "pontos": 2523}
+  },
+  "B5": {
+    "tecnologia": "celulas mecanicas",
+    "publica": false,
+    "frequencia": "2h",
+    "bruto": {
+      "arquivo": "raw/B5_T_Conceicao.csv",
+      "separador": ",",
+      "coluna_data": "date",
+      "formato_data": "%d-%b-%y %H:%M:%S",
+      "inicio": "2019-01-01 00:29:00",
+      "fim": "2019-05-31 22:29:00",
+      "linhas": 1668,
+      "colunas": 3
+    },
+    "alvo": {"silica": "P_PF1CN_QQ_GLOBAL_SIO2", "ferro": "P_PF1CN_QQ_GLOBAL_FE"},
+    "colunas_categoricas": [],
+    "colunas_excluir": [],
+    "processado": {"silica": "processed/silica/B5.parquet", "ferro": "processed/ferro/B5.parquet", "pontos": 1812},
+    "variaveis_processo": {
+      "fonte": "I_Conceicao.xlsx (Erick Guedes, mestrado ITV), aba Dados_Flotacao_ConceicaoII_mod4",
+      "n_variaveis": 65,
+      "bruto_longo": "raw/B5_I_Conceicao_longo.parquet",
+      "colunas_longo": ["variavel", "data_hora", "valor", "valor_texto"],
+      "medicoes": 11469136,
+      "dicionario": "raw/B5_I_Conceicao_variaveis.csv",
+      "juntado_2h": "processed/covariaveis/B5_2h.parquet",
+      "janela_2h": "rotulo L = media das amostras em (L-1h31m, L+29m]",
+      "covariaveis_interpoladas": false
+    }
+  }
+}
