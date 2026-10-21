@@ -19,6 +19,7 @@ processed/covariaveis/ alvo + variáveis de processo já juntados na grade do al
 scripts/              código que gerou os arquivos da B5 a partir do xlsx original
 reproducao_erick_guedes/  como reproduzir a dissertação de Erick Guedes (2020) do zero: código, passo a passo, resultados e figuras
 datasets.json         metadados de cada base (colunas-alvo, frequência, cuidados)
+CONTEXTO.md           resumo do trabalho feito até agora e pendências (para retomar em outra sessão)
 SHA256SUMS            checksums de todos os arquivos de dados
 ```
 

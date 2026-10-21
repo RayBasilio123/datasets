@@ -1,3 +1,5 @@
 dados/
 __pycache__/
 resultados/run.log
+resultados/*_run.log
+resultados/silica*/*/treinos_*.parquet

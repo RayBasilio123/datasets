@@ -17,5 +17,6 @@ mkdir -p resultados
   "$PY" metricas.py --conjuntos auto_disp_rrelieff auto_disp_pca --saida metricas_ponta_a_ponta_disp.md
   "$PY" graficos.py --variante listas_erick
   "$PY" graficos.py --variante ponta_a_ponta
+  "$PY" bases_silica.py --workers "$W"                            # mesma metodologia para a SiO2, B1-B5
   echo "fim $(date)"
 } 2>&1 | tee resultados/run.log

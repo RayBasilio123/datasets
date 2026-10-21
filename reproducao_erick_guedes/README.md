@@ -111,6 +111,50 @@ A disponibilidade precisa ser exigida em março **e** no período jan–mai: var
 
 Detalhes e MAE: `resultados/orig_atraso0h_matlab/metricas_ponta_a_ponta_disp.md` e `figuras/ponta_a_ponta/`.
 
+## A mesma metodologia para a sílica, em todas as bases
+
+`bases_silica.py` aplica os mesmos passos e modelos ao teor de **SiO₂ do concentrado** na B5 e nas bases B1–B4
+(`python bases_silica.py --workers 8`; o alvo Fe também funciona, `--alvo fe`). Com `--bases B5 --alvo fe` ele
+reproduz os treinos de Fe acima valor a valor (diferença máxima 1e-16). Resultados: `resultados/silica/resumo.md`
+(R, MSE, R² e MAE de cada base, no mês de treino e nos outros meses, e o MAE/R² mês a mês) e
+`resultados/silica/<base>/resumo.json` (seleção de variáveis e métricas). Os 1000 treinos de cada modelo
+(`treinos_*.parquet`, ~38 MB) não vão para o git; rodar o script os regenera.
+
+O que é igual em todas as bases: mediana/agregação por análise, descarte de zeros, preenchimento do 04b, as quatro
+etapas de seleção (disponibilidade > 85% no mês de treino e no período, redundância, |r| ≥ 0,90, RReliefF k = 53 e
+PCA > 90%), RNA LM/SCG com saída `tansig` e RF de 500 árvores, 1000 treinos (200 divisões 75/15/15 × 5 ciclos), e os
+mesmos critérios de escolha do Erick (RNA de menor MSE, RF de maior R no teste).
+
+O que precisou ser adaptado, porque as bases são diferentes:
+
+| | B5 | B1, B4 | B2 | B3 |
+|---|---|---|---|---|
+| Uma amostra por análise | janela de 2 h refeita dos dados de 20 s | linhas de 2 h da própria base | linhas de 1 h da própria base | 2 registros horários de cada análise, pela mediana |
+| Entradas | 65 variáveis de processo | sem análises de laboratório (`P_…`), estados de motor, médias móveis e contador | sem as análises (`% …`) | sem granulometria e química (colunas `(%)` exceto níveis) |
+| Etapa 2 (redundância qualitativa) | lista do Erick | — (nada identificável pelo nome) | — | saem tempo de residência e velocidade superficial do ar (calculados) |
+| Mês de treino | março/2019 | B1 mai/2024, B4 mar/2025 | jun/2017 | set/2022 |
+
+Em todas: análise de laboratório repetida no registro seguinte é preenchimento e sai; valor fora de
+[Q1 − 10 IQR, Q3 + 10 IQR] é inválido (a B3 tem dosagens de 10³⁶ g/t); o mês de treino é o mês com ≥ 75% das
+análises esperadas mais perto do meio do período (o critério do Erick para março). Na B5 as etapas 1–3 não dependem
+do alvo e ficam as do Erick (21 variáveis); só o RReliefF é refeito para a sílica.
+
+**Resultado (SiO₂, meses fora do treino, todos juntos; R² = 1 − SQE/SQT):**
+
+| Base | Mês de treino | R da RF adotada no mês de treino | RF adotada: R² / MAE | RNA adotada: R² / MAE | Média do mês de treino: MAE | Último resultado de laboratório: R² / MAE |
+|---|---|---|---|---|---|---|
+| B5 | 2019-03 | 0,85 | −0,23 / 1,49 | −12,3 / 4,19 | 1,14 | −0,08 / 0,93 |
+| B1 | 2024-05 | 0,87 | −0,20 / 1,88 | −6,41 / 5,36 | 1,27 | 0,39 / 0,89 |
+| B2 | 2017-06 | 0,87 | −0,04 / 0,94 | −0,59 / 1,14 | 0,94 | 0,51 / 0,53 |
+| B3 | 2022-09 | 0,86 | −0,19 / 1,68 | −5,11 / 3,90 | 1,25 | −0,06 / 1,08 |
+| B4 | 2025-03 | 0,81 | −0,21 / 1,98 | −6,35 / 3,26 | 1,73 | −0,28 / 1,37 |
+
+Em todas as bases o modelo se ajusta bem ao mês de treino (R de 0,8 a 0,9) e não generaliza para os outros meses:
+o R fora do treino fica entre 0 e 0,18, e nenhum modelo ganha de repetir a média do mês de treino. A sílica tem
+picos de 10% a 38% em B1, B3, B4 e B5, que pesam no MSE; sem eles (`--sem-extremos`, |z| > 3 sai, como no
+`csv_to_gluonts.py` do Basilio2026; `resultados/silica_sem_extremos/`) os erros caem, mas a conclusão é a mesma
+(RF fora do treino: R² de −0,02 a −0,16).
+
 ## Saídas
 
 | Pasta | Conteúdo |
@@ -118,6 +162,7 @@ Detalhes e MAE: `resultados/orig_atraso0h_matlab/metricas_ponta_a_ponta_disp.md`
 | `dados/` (não versionada) | medianas por janela (`agrupados_*`), preenchidas (`preenchidos_*`), seleção de variáveis (`selecao_*.json`) |
 | `resultados/prep_relatorio_orig.json` | conferências dos dados (correlações, RReliefF, etapas da seleção) |
 | `resultados/orig_atraso0h_matlab/` | `treinos_*.csv` (os 1000 treinos de cada modelo), `resumo*.json`, `metricas*.md` |
+| `resultados/silica/`, `resultados/silica_sem_extremos/` | `resumo.md` (SiO₂ em B1–B5) e, por base, `resumo.json` (e `treinos_*.parquet`, fora do git) |
 | `figuras/` | Figs. 3.2, 3.4, 4.1, 4.2, 4.4–4.11 refeitas e a distribuição do MAE mensal nos 1000 treinos |
 
 ## Diferenças que restam
