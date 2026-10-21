@@ -1,0 +1,904 @@
+{
+ "amostras_por_mes": {
+  "mar": 358,
+  "jan": 338,
+  "mai": 337,
+  "abr": 324,
+  "fev": 311
+ },
+ "orig_atraso0h": {
+  "amostras_marco": 358,
+  "etapa1_ficam": 36,
+  "etapa1_esperado": 32,
+  "etapa1_lista": [
+   "CA_nivel",
+   "CA_densidade",
+   "CA_vazao_vol",
+   "CA_vazao_mas",
+   "CA_vazao_amina",
+   "CA_vazao_amido",
+   "CR_nivel",
+   "CR_densidade",
+   "CR_vazao_vol",
+   "CR_vazao_mas",
+   "R1_espuma",
+   "R1_ar",
+   "R2_espuma",
+   "R2_ar",
+   "C1_espuma",
+   "C1_ar",
+   "C1_dardo1",
+   "C1_dardo2",
+   "C2_espuma",
+   "C2_ar",
+   "C2_dardo1",
+   "C2_dardo2",
+   "RC_espuma",
+   "RC_ar",
+   "RC_dardo1",
+   "RC_dardo2",
+   "S1B1_espuma",
+   "S1B1_dardo2",
+   "S1B2_espuma",
+   "S1B2_dardo1",
+   "S1B2_dardo2",
+   "S1B3_espuma",
+   "S1B3_dardo1",
+   "S1B3_dardo2",
+   "S2B1_espuma",
+   "S2B3_ar"
+  ],
+  "etapa2_26_fora_da_etapa1": [],
+  "tabela_3_3": [
+   {
+    "par": [
+     "R1_ar",
+     "R2_ar"
+    ],
+    "erick": 0.98,
+    "nosso": 0.982
+   },
+   {
+    "par": [
+     "C1_espuma",
+     "C2_espuma"
+    ],
+    "erick": 0.92,
+    "nosso": 0.92
+   },
+   {
+    "par": [
+     "C1_ar",
+     "C2_ar"
+    ],
+    "erick": 0.98,
+    "nosso": 0.984
+   },
+   {
+    "par": [
+     "C1_dardo1",
+     "C2_dardo1"
+    ],
+    "erick": 0.93,
+    "nosso": 0.93
+   },
+   {
+    "par": [
+     "C1_dardo1",
+     "RC_dardo1"
+    ],
+    "erick": 0.92,
+    "nosso": 0.916
+   }
+  ],
+  "corr_fe": {
+   "CR_densidade": -0.321,
+   "C1_dardo1": 0.27,
+   "RC_dardo1": 0.215,
+   "CR_vazao_vol": 0.185,
+   "C2_dardo1": 0.156,
+   "R1_espuma": 0.137,
+   "C2_espuma": -0.111,
+   "CA_vazao_vol": 0.108,
+   "R1_ar": 0.096,
+   "S1B2_espuma": -0.095,
+   "CA_vazao_amina": 0.094,
+   "C1_espuma": -0.088,
+   "R2_ar": 0.087,
+   "CA_nivel": 0.085,
+   "S1B1_espuma": -0.082,
+   "R2_espuma": -0.071,
+   "S1B3_espuma": -0.047,
+   "RC_espuma": -0.037,
+   "C2_ar": -0.033,
+   "CA_vazao_amido": 0.027,
+   "CR_nivel": 0.013,
+   "CA_densidade": 0.012,
+   "S2B3_ar": -0.003,
+   "S1B1_dardo2": -0.003,
+   "S1B2_dardo1": -0.002,
+   "C1_ar": -0.001
+  },
+  "max_abs_corr_fe": {
+   "erick": 0.32,
+   "nosso": 0.321
+  },
+  "rrelieff": [
+   {
+    "var": "CR_densidade",
+    "peso": 0.03073
+   },
+   {
+    "var": "CA_vazao_amina",
+    "peso": 0.01534
+   },
+   {
+    "var": "CR_vazao_vol",
+    "peso": 0.01472
+   },
+   {
+    "var": "CA_densidade",
+    "peso": 0.01173
+   },
+   {
+    "var": "RC_espuma",
+    "peso": 0.01161
+   },
+   {
+    "var": "CA_vazao_amido",
+    "peso": 0.01116
+   },
+   {
+    "var": "R2_espuma",
+    "peso": 0.00942
+   },
+   {
+    "var": "CA_nivel",
+    "peso": 0.00467
+   },
+   {
+    "var": "C1_dardo1",
+    "peso": 0.00462
+   },
+   {
+    "var": "S1B2_espuma",
+    "peso": 0.00407
+   },
+   {
+    "var": "R1_espuma",
+    "peso": 0.00259
+   },
+   {
+    "var": "S1B3_espuma",
+    "peso": 0.00241
+   },
+   {
+    "var": "CA_vazao_vol",
+    "peso": 0.00218
+   },
+   {
+    "var": "S2B3_ar",
+    "peso": 0.00111
+   },
+   {
+    "var": "C1_espuma",
+    "peso": 0.00094
+   },
+   {
+    "var": "R1_ar",
+    "peso": -0.00046
+   },
+   {
+    "var": "S1B1_espuma",
+    "peso": -0.00177
+   },
+   {
+    "var": "S1B2_dardo1",
+    "peso": -0.00214
+   },
+   {
+    "var": "C1_ar",
+    "peso": -0.00238
+   },
+   {
+    "var": "S1B1_dardo2",
+    "peso": -0.00349
+   },
+   {
+    "var": "CR_nivel",
+    "peso": -0.00721
+   }
+  ],
+  "rrelieff_positivos": 15,
+  "rrelieff_iguais_aos_15_do_erick": 15,
+  "ponta_a_ponta": {
+   "criterio_disponibilidade": "marco",
+   "disponibilidade_pct": {
+    "CA_nivel": 100.0,
+    "CA_densidade": 100.0,
+    "CA_vazao_vol": 100.0,
+    "CA_vazao_mas": 100.0,
+    "CA_vazao_amina": 100.0,
+    "CA_vazao_amido": 100.0,
+    "CR_nivel": 100.0,
+    "CR_densidade": 100.0,
+    "CR_vazao_vol": 100.0,
+    "CR_vazao_mas": 100.0,
+    "R1_espuma": 88.8,
+    "R1_ar": 100.0,
+    "R1_dardo1": 53.6,
+    "R1_dardo2": 49.2,
+    "R1_valv_ar": 66.8,
+    "R2_espuma": 100.0,
+    "R2_ar": 100.0,
+    "R2_dardo1": 82.1,
+    "R2_dardo2": 81.8,
+    "R2_valv_ar": 63.1,
+    "C1_espuma": 97.8,
+    "C1_ar": 100.0,
+    "C1_dardo1": 99.4,
+    "C1_dardo2": 99.7,
+    "C1_valv_ar": 63.7,
+    "C2_espuma": 98.6,
+    "C2_ar": 100.0,
+    "C2_dardo1": 100.0,
+    "C2_dardo2": 100.0,
+    "C2_valv_ar": 72.3,
+    "RC_espuma": 100.0,
+    "RC_ar": 100.0,
+    "RC_dardo1": 100.0,
+    "RC_dardo2": 100.0,
+    "RC_valv_ar": 50.8,
+    "S1B1_espuma": 95.0,
+    "S1B1_ar": 0.0,
+    "S1B1_dardo1": 66.8,
+    "S1B1_dardo2": 95.0,
+    "S1B1_valv_ar": 18.7,
+    "S1B2_espuma": 99.7,
+    "S1B2_ar": 63.4,
+    "S1B2_dardo1": 92.7,
+    "S1B2_dardo2": 91.9,
+    "S1B2_valv_ar": 10.6,
+    "S1B3_espuma": 98.0,
+    "S1B3_ar": 0.0,
+    "S1B3_dardo1": 85.5,
+    "S1B3_dardo2": 90.5,
+    "S1B3_valv_ar": 10.6,
+    "S2B1_espuma": 96.1,
+    "S2B1_ar": 0.0,
+    "S2B1_dardo1": 55.0,
+    "S2B1_dardo2": 54.5,
+    "S2B1_valv_ar": 69.6,
+    "S2B2_espuma": 66.5,
+    "S2B2_ar": 40.2,
+    "S2B2_dardo1": 50.3,
+    "S2B2_dardo2": 45.3,
+    "S2B2_valv_ar": 15.6,
+    "S2B3_espuma": 69.8,
+    "S2B3_ar": 100.0,
+    "S2B3_dardo1": 15.4,
+    "S2B3_dardo2": 16.2,
+    "S2B3_valv_ar": 48.0
+   },
+   "etapa1_disponibilidade": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_mas",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "CR_vazao_mas",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "R2_ar",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "C1_dardo2",
+    "C2_espuma",
+    "C2_ar",
+    "C2_dardo1",
+    "C2_dardo2",
+    "RC_espuma",
+    "RC_ar",
+    "RC_dardo1",
+    "RC_dardo2",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B2_dardo2",
+    "S1B3_espuma",
+    "S1B3_dardo1",
+    "S1B3_dardo2",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa2_qualitativa": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "R2_ar",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "C2_espuma",
+    "C2_ar",
+    "C2_dardo1",
+    "RC_espuma",
+    "RC_ar",
+    "RC_dardo1",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B3_espuma",
+    "S1B3_dardo1",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa3_correlacao": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "RC_espuma",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B3_espuma",
+    "S1B3_dardo1",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa3_pares_removidos": [
+    {
+     "mantida": "R1_ar",
+     "removida": "R2_ar",
+     "r": 0.982
+    },
+    {
+     "mantida": "C1_espuma",
+     "removida": "C2_espuma",
+     "r": 0.92
+    },
+    {
+     "mantida": "C1_ar",
+     "removida": "C2_ar",
+     "r": 0.984
+    },
+    {
+     "mantida": "C1_dardo1",
+     "removida": "C2_dardo1",
+     "r": 0.93
+    },
+    {
+     "mantida": "C1_ar",
+     "removida": "RC_ar",
+     "r": 0.978
+    },
+    {
+     "mantida": "C1_dardo1",
+     "removida": "RC_dardo1",
+     "r": 0.916
+    }
+   ],
+   "etapa4_rrelieff": [
+    "CR_densidade",
+    "S2B1_espuma",
+    "CR_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CA_densidade",
+    "RC_espuma",
+    "R2_espuma",
+    "CA_nivel",
+    "S1B2_espuma",
+    "R1_espuma",
+    "C1_dardo1",
+    "S1B3_espuma",
+    "CA_vazao_vol",
+    "S2B3_ar",
+    "R1_ar",
+    "C1_ar",
+    "S1B2_dardo1",
+    "S1B1_espuma"
+   ],
+   "etapa4_pesos": [
+    {
+     "var": "CR_densidade",
+     "peso": 0.03001
+    },
+    {
+     "var": "S2B1_espuma",
+     "peso": 0.0264
+    },
+    {
+     "var": "CR_vazao_vol",
+     "peso": 0.01546
+    },
+    {
+     "var": "CA_vazao_amina",
+     "peso": 0.01518
+    },
+    {
+     "var": "CA_vazao_amido",
+     "peso": 0.01393
+    },
+    {
+     "var": "CA_densidade",
+     "peso": 0.0127
+    },
+    {
+     "var": "RC_espuma",
+     "peso": 0.01141
+    },
+    {
+     "var": "R2_espuma",
+     "peso": 0.01035
+    },
+    {
+     "var": "CA_nivel",
+     "peso": 0.00544
+    },
+    {
+     "var": "S1B2_espuma",
+     "peso": 0.00495
+    },
+    {
+     "var": "R1_espuma",
+     "peso": 0.00447
+    },
+    {
+     "var": "C1_dardo1",
+     "peso": 0.00443
+    },
+    {
+     "var": "S1B3_espuma",
+     "peso": 0.00343
+    },
+    {
+     "var": "CA_vazao_vol",
+     "peso": 0.00247
+    },
+    {
+     "var": "S2B3_ar",
+     "peso": 0.0016
+    },
+    {
+     "var": "R1_ar",
+     "peso": 0.00118
+    },
+    {
+     "var": "C1_ar",
+     "peso": 0.00079
+    },
+    {
+     "var": "S1B2_dardo1",
+     "peso": 0.00062
+    },
+    {
+     "var": "S1B1_espuma",
+     "peso": 0.00027
+    },
+    {
+     "var": "C1_espuma",
+     "peso": -6e-05
+    },
+    {
+     "var": "S1B1_dardo2",
+     "peso": -0.00143
+    },
+    {
+     "var": "S1B3_dardo1",
+     "peso": -0.00669
+    },
+    {
+     "var": "CR_nivel",
+     "peso": -0.00813
+    }
+   ],
+   "etapa4_pca_componentes": 11,
+   "etapa4_pca_variancia": 0.9143,
+   "contagens": {
+    "aqui": [
+     36,
+     29,
+     23,
+     19,
+     11
+    ],
+    "erick": [
+     32,
+     26,
+     21,
+     15,
+     10
+    ]
+   },
+   "diferencas_etapa2_vs_erick": {
+    "so_aqui": [
+     "RC_ar",
+     "S1B3_dardo1",
+     "S2B1_espuma"
+    ],
+    "so_erick": []
+   },
+   "diferencas_etapa3_vs_erick": {
+    "so_aqui": [
+     "S1B3_dardo1",
+     "S2B1_espuma"
+    ],
+    "so_erick": []
+   },
+   "diferencas_rrelieff_vs_erick": {
+    "so_aqui": [
+     "S2B1_espuma",
+     "R1_ar",
+     "C1_ar",
+     "S1B2_dardo1",
+     "S1B1_espuma"
+    ],
+    "so_erick": [
+     "C1_espuma"
+    ]
+   }
+  },
+  "ponta_a_ponta_disp": {
+   "criterio_disponibilidade": "marco_e_periodo",
+   "disponibilidade_pct": {
+    "CA_nivel": 99.9,
+    "CA_densidade": 100.0,
+    "CA_vazao_vol": 100.0,
+    "CA_vazao_mas": 99.9,
+    "CA_vazao_amina": 100.0,
+    "CA_vazao_amido": 99.9,
+    "CR_nivel": 99.9,
+    "CR_densidade": 100.0,
+    "CR_vazao_vol": 100.0,
+    "CR_vazao_mas": 100.0,
+    "R1_espuma": 88.8,
+    "R1_ar": 99.9,
+    "R1_dardo1": 43.6,
+    "R1_dardo2": 41.7,
+    "R1_valv_ar": 52.3,
+    "R2_espuma": 95.1,
+    "R2_ar": 100.0,
+    "R2_dardo1": 82.1,
+    "R2_dardo2": 81.8,
+    "R2_valv_ar": 54.9,
+    "C1_espuma": 95.0,
+    "C1_ar": 100.0,
+    "C1_dardo1": 99.4,
+    "C1_dardo2": 99.7,
+    "C1_valv_ar": 43.9,
+    "C2_espuma": 95.0,
+    "C2_ar": 100.0,
+    "C2_dardo1": 100.0,
+    "C2_dardo2": 100.0,
+    "C2_valv_ar": 56.6,
+    "RC_espuma": 100.0,
+    "RC_ar": 82.9,
+    "RC_dardo1": 100.0,
+    "RC_dardo2": 100.0,
+    "RC_valv_ar": 28.2,
+    "S1B1_espuma": 91.2,
+    "S1B1_ar": 0.0,
+    "S1B1_dardo1": 66.8,
+    "S1B1_dardo2": 94.9,
+    "S1B1_valv_ar": 17.0,
+    "S1B2_espuma": 96.9,
+    "S1B2_ar": 63.4,
+    "S1B2_dardo1": 91.3,
+    "S1B2_dardo2": 88.9,
+    "S1B2_valv_ar": 10.6,
+    "S1B3_espuma": 94.8,
+    "S1B3_ar": 0.0,
+    "S1B3_dardo1": 72.8,
+    "S1B3_dardo2": 74.1,
+    "S1B3_valv_ar": 10.6,
+    "S2B1_espuma": 85.3,
+    "S2B1_ar": 0.0,
+    "S2B1_dardo1": 46.4,
+    "S2B1_dardo2": 38.7,
+    "S2B1_valv_ar": 28.8,
+    "S2B2_espuma": 66.5,
+    "S2B2_ar": 10.1,
+    "S2B2_dardo1": 50.3,
+    "S2B2_dardo2": 45.3,
+    "S2B2_valv_ar": 14.8,
+    "S2B3_espuma": 69.8,
+    "S2B3_ar": 100.0,
+    "S2B3_dardo1": 15.4,
+    "S2B3_dardo2": 16.2,
+    "S2B3_valv_ar": 48.0
+   },
+   "etapa1_disponibilidade": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_mas",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "CR_vazao_mas",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "R2_ar",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "C1_dardo2",
+    "C2_espuma",
+    "C2_ar",
+    "C2_dardo1",
+    "C2_dardo2",
+    "RC_espuma",
+    "RC_dardo1",
+    "RC_dardo2",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B2_dardo2",
+    "S1B3_espuma",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa2_qualitativa": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "R2_ar",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "C2_espuma",
+    "C2_ar",
+    "C2_dardo1",
+    "RC_espuma",
+    "RC_dardo1",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B3_espuma",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa3_correlacao": [
+    "CA_nivel",
+    "CA_densidade",
+    "CA_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CR_nivel",
+    "CR_densidade",
+    "CR_vazao_vol",
+    "R1_espuma",
+    "R1_ar",
+    "R2_espuma",
+    "C1_espuma",
+    "C1_ar",
+    "C1_dardo1",
+    "RC_espuma",
+    "S1B1_espuma",
+    "S1B1_dardo2",
+    "S1B2_espuma",
+    "S1B2_dardo1",
+    "S1B3_espuma",
+    "S2B1_espuma",
+    "S2B3_ar"
+   ],
+   "etapa3_pares_removidos": [
+    {
+     "mantida": "R1_ar",
+     "removida": "R2_ar",
+     "r": 0.982
+    },
+    {
+     "mantida": "C1_espuma",
+     "removida": "C2_espuma",
+     "r": 0.92
+    },
+    {
+     "mantida": "C1_ar",
+     "removida": "C2_ar",
+     "r": 0.984
+    },
+    {
+     "mantida": "C1_dardo1",
+     "removida": "C2_dardo1",
+     "r": 0.93
+    },
+    {
+     "mantida": "C1_dardo1",
+     "removida": "RC_dardo1",
+     "r": 0.916
+    }
+   ],
+   "etapa4_rrelieff": [
+    "CR_densidade",
+    "S2B1_espuma",
+    "CR_vazao_vol",
+    "CA_vazao_amina",
+    "CA_vazao_amido",
+    "CA_densidade",
+    "RC_espuma",
+    "R2_espuma",
+    "CA_nivel",
+    "R1_espuma",
+    "S1B2_espuma",
+    "C1_dardo1",
+    "S1B3_espuma",
+    "CA_vazao_vol",
+    "S2B3_ar",
+    "R1_ar",
+    "C1_ar",
+    "C1_espuma"
+   ],
+   "etapa4_pesos": [
+    {
+     "var": "CR_densidade",
+     "peso": 0.03011
+    },
+    {
+     "var": "S2B1_espuma",
+     "peso": 0.02692
+    },
+    {
+     "var": "CR_vazao_vol",
+     "peso": 0.015
+    },
+    {
+     "var": "CA_vazao_amina",
+     "peso": 0.015
+    },
+    {
+     "var": "CA_vazao_amido",
+     "peso": 0.01402
+    },
+    {
+     "var": "CA_densidade",
+     "peso": 0.01236
+    },
+    {
+     "var": "RC_espuma",
+     "peso": 0.01153
+    },
+    {
+     "var": "R2_espuma",
+     "peso": 0.0105
+    },
+    {
+     "var": "CA_nivel",
+     "peso": 0.00558
+    },
+    {
+     "var": "R1_espuma",
+     "peso": 0.00477
+    },
+    {
+     "var": "S1B2_espuma",
+     "peso": 0.00476
+    },
+    {
+     "var": "C1_dardo1",
+     "peso": 0.00414
+    },
+    {
+     "var": "S1B3_espuma",
+     "peso": 0.00341
+    },
+    {
+     "var": "CA_vazao_vol",
+     "peso": 0.0021
+    },
+    {
+     "var": "S2B3_ar",
+     "peso": 0.00181
+    },
+    {
+     "var": "R1_ar",
+     "peso": 0.00138
+    },
+    {
+     "var": "C1_ar",
+     "peso": 0.00058
+    },
+    {
+     "var": "C1_espuma",
+     "peso": 0.00013
+    },
+    {
+     "var": "S1B1_espuma",
+     "peso": -0.00031
+    },
+    {
+     "var": "S1B2_dardo1",
+     "peso": -0.00129
+    },
+    {
+     "var": "S1B1_dardo2",
+     "peso": -0.00197
+    },
+    {
+     "var": "CR_nivel",
+     "peso": -0.00889
+    }
+   ],
+   "etapa4_pca_componentes": 10,
+   "etapa4_pca_variancia": 0.9014,
+   "contagens": {
+    "aqui": [
+     33,
+     27,
+     22,
+     18,
+     10
+    ],
+    "erick": [
+     32,
+     26,
+     21,
+     15,
+     10
+    ]
+   },
+   "diferencas_etapa2_vs_erick": {
+    "so_aqui": [
+     "S2B1_espuma"
+    ],
+    "so_erick": []
+   },
+   "diferencas_etapa3_vs_erick": {
+    "so_aqui": [
+     "S2B1_espuma"
+    ],
+    "so_erick": []
+   },
+   "diferencas_rrelieff_vs_erick": {
+    "so_aqui": [
+     "S2B1_espuma",
+     "R1_ar",
+     "C1_ar"
+    ],
+    "so_erick": []
+   }
+  }
+ }
+}

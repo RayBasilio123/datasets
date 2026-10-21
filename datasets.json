@@ -208,7 +208,9 @@
         "equipamento",
         "tag_pims",
         "nome_original"
-      ]
+      ],
+      "bruto_longo_originais": "raw/B5_processo_originais_longo.parquet",
+      "nota_originais": "mesmos valores do bruto_longo, data e hora com segundos (Dados_Conceicao_*.xlsx); variavel com nome descritivo"
     },
     "laboratorio": {
       "arquivo": "raw/B5_laboratorio.csv",
@@ -225,6 +227,7 @@
         "concentrado_sio2"
       ],
       "nota": "concentrado_fe/sio2 sao identicos ao alvo (raw/B5_T_Conceicao.csv); data e hora truncadas no minuto"
-    }
+    },
+    "reproducao_dissertacao": "reproducao_erick_guedes/"
   }
 }

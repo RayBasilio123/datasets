@@ -17,6 +17,7 @@ processed/silica/     série-alvo SiO2 do concentrado, formato GluonTS (usada no
 processed/ferro/      série Fe do concentrado, mesmo formato e mesma grade temporal
 processed/covariaveis/ alvo + variáveis de processo já juntados na grade do alvo (B5)
 scripts/              código que gerou os arquivos da B5 a partir do xlsx original
+reproducao_erick_guedes/  como reproduzir a dissertação de Erick Guedes (2020) do zero: código, passo a passo, resultados e figuras
 datasets.json         metadados de cada base (colunas-alvo, frequência, cuidados)
 SHA256SUMS            checksums de todos os arquivos de dados
 ```
@@ -103,7 +104,8 @@ frequência (de 15 s a ~1,5 h). Elas estão aqui em três arquivos:
 
 | Arquivo | O que é |
 |---|---|
-| `raw/B5_I_Conceicao_longo.parquet` | **Bruto sem perda.** Uma linha por medição (11,5 milhões): `variavel`, `data_hora`, `valor`, `valor_texto`. |
+| `raw/B5_processo_originais_longo.parquet` | **Bruto sem perda, versão recomendada.** As mesmas 11,5 milhões de medições, lidas dos `Dados_Conceicao_*.xlsx` originais do Erick, com **data e hora em segundos**; `variavel` usa o nome descritivo (`CA_densidade`, `S2B3_ar`…; ver o dicionário). |
+| `raw/B5_I_Conceicao_longo.parquet` | Mesmos valores, a partir do `I_Conceicao.xlsx` (hora truncada no minuto; `variavel` = `v01`…`v65`). Base do `B5_2h.parquet`. |
 | `raw/B5_I_Conceicao_variaveis.csv` | Dicionário: nome descritivo (célula + variável), equipamento, **tag do PIMS**, nome original, coluna no xlsx, nº de amostras, período, intervalo mediano, mín./máx. |
 | `raw/B5_laboratorio.csv` | As **9 análises de laboratório** (formato longo: `variavel`, `tag_pims`, `data_hora`, `valor`): Fe, SiO₂ e +0,15 mm da alimentação; Fe e SiO₂ da carga circulante, do rejeito e do concentrado. |
 | `processed/covariaveis/B5_2h.parquet` | **Pronto para modelar.** 1.812 linhas na mesma grade de `processed/silica/B5.parquet`: `data_hora`, `silica`, `ferro` e as 65 variáveis (`v01_nivel` … `v65_abertura_valvula_ar`). |
@@ -145,6 +147,12 @@ Cuidados:
   nem valor (só espaço, na variável 16) foram descartadas.
 - **Conversão**: a data e hora do Excel (número serial) foi arredondada ao
   segundo; os valores foram copiados sem arredondamento.
+
+## Reprodução da dissertação de Erick Guedes
+
+A pasta [`reproducao_erick_guedes/`](reproducao_erick_guedes/README.md) refaz o soft sensor de Fe da dissertação
+(Guedes, 2020) a partir de `raw/`: janelas, medianas, seleção de variáveis, RNA e RF com o protocolo do código MATLAB
+dele, tabelas 4.1–4.8 e figuras. `bash reproducao_erick_guedes/run.sh` roda tudo.
 
 ## Proveniência
 
