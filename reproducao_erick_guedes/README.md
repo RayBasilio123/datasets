@@ -82,7 +82,8 @@ entradas). Os resultados são determinísticos: rodar de novo dá exatamente os 
 | RNA LM RReliefF, menor MSE: R treino / val. / teste / todos, MSE — Fig. 4.5 | 0,944 / 0,388 / 0,601 / 0,871, 0,750 | 0,963 / 0,664 / 0,796 / 0,865, 0,795 |
 | RNA SCG RReliefF: 5 maiores R no teste — Tab. 4.1 | 0,62–0,67 | 0,79–0,83 |
 
-Todas as tabelas, lado a lado: `resultados/orig_atraso0h_matlab/metricas.md`.
+Todas as tabelas, lado a lado: `resultados/orig_atraso0h_matlab/metricas.md`. MAE, MSE, R e R² de cada modelo escolhido,
+por conjunto e por mês: `resultados/orig_atraso0h_matlab/metricas_escolhidos.md` (`python metricas_escolhidos.py`).
 
 **O que se reproduz e o que não:**
 - **Dados e tratamento:** reproduzidos valor a valor.
