@@ -134,7 +134,11 @@ Cuidados:
   arquivo longo, as linhas de cada variável estão na ordem original, então dá
   para distinguir as duas passagens pela posição.
 - **Data e hora truncadas no minuto** na maioria das variáveis: várias medições
-  dividem o mesmo `data_hora`. Isso é do arquivo original.
+  dividem o mesmo `data_hora`. O truncamento é do `I_Conceicao.xlsx` (exportação de
+  2025); os arquivos por equipamento de 2019 (`Dados_Conceicao_*.xlsx`) têm os
+  segundos e os mesmos valores. O PIMS grava pontos irregulares (quando o valor muda):
+  intervalo mediano de ~15 s nas vazões de ar, 20–150 s no nível de espuma e 25–245 s
+  nas válvulas dardo.
 - **Valores inválidos**: 67 medições `Bad` (marcação de qualidade do PIMS) viram
   `valor = NaN`, com o texto preservado em `valor_texto`. 4 células sem data
   nem valor (só espaço, na variável 16) foram descartadas.
