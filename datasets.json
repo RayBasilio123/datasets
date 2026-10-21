@@ -74,7 +74,7 @@
     }
   },
   "B3": {
-    "tecnologia": "colunas de flotacao",
+    "tecnologia": "celulas mecanicas (pelos dados; o artigo Basilio2026 diz colunas)",
     "publica": false,
     "frequencia": "2h",
     "frequencia_bruto": "h",
@@ -112,7 +112,8 @@
       "silica": "processed/silica/B3.parquet",
       "ferro": "processed/ferro/B3.parquet",
       "pontos": 6852
-    }
+    },
+    "nota_tecnologia": "mesmo circuito de 11 celulas e mesma area de tags (CX1430CN, Conceicao II) da B5; provavelmente a mesma linha em 2022-2023; confirmar com quem forneceu a base"
   },
   "B4": {
     "tecnologia": "celulas mecanicas (subconjunto continuo da B1, tags renomeadas)",

@@ -30,9 +30,19 @@ Os parquets precisam de `pyarrow` (o `venv_test` do Basilio2026 já tem).
 |---|---|---|---|---|---|---|
 | B1 | Células mecânicas | 2023-05-23 – 2025-06-22 | 2h | 7.244 | 49 | 9.124 |
 | B2 | Colunas (pública, Kaggle) | 2017-03-10 – 2017-09-09 | 1h | 4.097 | 21 | 4.415 |
-| B3 | Colunas | 2022-01-01 – 2023-07-25 | 2h (bruto 1h) | 13.704 | 58 | 6.852 |
+| B3 | Células mecânicas* | 2022-01-01 – 2023-07-25 | 2h (bruto 1h) | 13.704 | 58 | 6.852 |
 | B4 | Células mecânicas (subconjunto da B1) | 2024-11-23 – 2025-06-21 | 2h | 1.909 | 38 | 2.523 |
 | B5 | Células mecânicas | 2019-01-01 – 2019-05-31 | 2h | 1.668 | 65 (arquivo separado, ver seção B5) | 1.812 |
+
+\* **B3 é célula mecânica pelos dados** (o artigo Basilio2026, Tabela 3, a classifica como coluna). Nenhuma
+variável diz "célula" ou "coluna", mas: o circuito tem as mesmas 11 unidades da B5 (1º/2º Rougher, 1º/2º Cleaner,
+Recleaner e 6 Scavengers); as caixas são da mesma área de Conceição (`CX1430CN01/02`; na B5, `CX1430CN07/13`); o
+bruto original se chama `Flotacao_conceicao_II_all.csv`, a mesma Conceição II da B5; a vazão de ar das células vai a
+~1.000–1.040 m³/h nas duas bases; e não há variável típica de coluna (água de lavagem, nível de interface, holdup).
+Tudo indica que **B3 e B5 são a mesma linha de células em períodos diferentes** (2022–2023 e 2019). Confirmar com
+quem forneceu a B3. Nas demais bases a tecnologia está nos próprios dados: B1 e B4 têm motores das máquinas de
+flotação (`MF6401`…`MF6432`) e níveis por célula; B2 tem "Flotation Column 01…07"; B5 é de células pela dissertação
+de Erick Guedes e pelas tags `CF1430CN01…27`.
 
 As séries processadas saíram de `Basilio2026/csv_to_gluonts.py`, que:
 
@@ -183,5 +193,8 @@ estão aqui.
   equipamento. A `v58_nivel` é na verdade a válvula dardo 1 da S2B2.
 - **Carga circulante**: a tag `P_SC1CN_*` foi lida como carga circulante por
   eliminação (a dissertação cita alimentação, carga circulante e rejeito); confirmar.
+- **Tecnologia da B3**: os dados indicam células mecânicas (mesma linha da B5), não colunas como
+  diz a Tabela 3 do artigo. Confirmar com quem forneceu a base. Se for a mesma linha, a B5 não é uma
+  "planta nova" em relação à B3.
 - **Tabela 3 do artigo**: diz 52 colunas para a B4 (o bruto tem 41) e 73 para a
   B5. Conferir.
