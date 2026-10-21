@@ -26,13 +26,23 @@ Os parquets precisam de `pyarrow` (o `venv_test` do Basilio2026 já tem).
 
 ## Resumo
 
-| Base | Tecnologia | Período (bruto) | Freq. alvo | Linhas brutas | Variáveis além de SiO2/Fe | Pontos processados |
-|---|---|---|---|---|---|---|
-| B1 | Células mecânicas | 2023-05-23 – 2025-06-22 | 2h | 7.244 | 49 | 9.124 |
-| B2 | Colunas (pública, Kaggle) | 2017-03-10 – 2017-09-09 | 1h | 4.097 | 21 | 4.415 |
-| B3 | Células mecânicas* | 2022-01-01 – 2023-07-25 | 2h (bruto 1h) | 13.704 | 58 | 6.852 |
-| B4 | Células mecânicas (subconjunto da B1) | 2024-11-23 – 2025-06-21 | 2h | 1.909 | 38 | 2.523 |
-| B5 | Células mecânicas | 2019-01-01 – 2019-05-31 | 2h | 1.668 | 65 (arquivo separado, ver seção B5) | 1.812 |
+| Base | Origem (usina · trabalho) | Tecnologia | Período (bruto) | Freq. alvo | Linhas brutas | Variáveis além de SiO2/Fe | Pontos processados |
+|---|---|---|---|---|---|---|---|
+| B1 | Vale, Timbopeba (Ouro Preto, MG) · mesma usina do TCC de Júlia S. Reis, em período maior | Células mecânicas | 2023-05-23 – 2025-06-22 | 2h | 7.244 | 49 | 9.124 |
+| B2 | Usina não identificada · Kaggle, *Quality Prediction in a Mining Process* (pública) | Colunas | 2017-03-10 – 2017-09-09 | 1h | 4.097 | 21 | 4.415 |
+| B3 | Vale, Conceição II (Itabira, MG)\*\* · fornecedor a confirmar | Células mecânicas* | 2022-01-01 – 2023-07-25 | 2h (bruto 1h) | 13.704 | 58 | 6.852 |
+| B4 | Vale, Timbopeba (Ouro Preto, MG) · TCC de Júlia S. Reis (UFOP, 2026) | Células mecânicas (subconjunto da B1) | 2024-11-23 – 2025-06-21 | 2h | 1.909 | 38 | 2.523 |
+| B5 | Vale, Conceição II (Itabira, MG) · dissertação de Érick Guedes (PROFICAM UFOP/ITV, 2020) | Células mecânicas | 2019-01-01 – 2019-05-31 | 2h | 1.668 | 65 (arquivo separado, ver seção B5) | 1.812 |
+
+**Como se sabe a origem:**
+- **B4:** é o `dados_consolidados_com_MM.csv` gerado pelo notebook de limpeza da Júlia (`data_clean(Julia) - todas
+  variaveis.ipynb`, que renomeia `TO_LI64…` para `nivel_celula_…` e `TO_MF64…` para `estado_motor_…`). O TCC
+  (*Sensor Virtual para Classificação da Sílica no Produto de um Processo de Flotação de Minério de Ferro*, Eng. de
+  Controle e Automação, UFOP) usa dados da Mina de Timbopeba de 22/11/2024 a 26/07/2025: 2 linhas de 6 células, as
+  mesmas 12 tags de nível da B1 e da B4.
+- **B1:** mesmas tags `TO_…` da B4, com o nome original do PIMS, de 2023 a 2025.
+- **B5:** a dissertação diz "usina de Conceição, em Itabira"; os arquivos originais são `Dados_Flotacao_ConceicaoII_*`.
+- **B3\*\*:** inferido pelos dados (ver a nota abaixo); confirmar com quem forneceu a base.
 
 \* **B3 é célula mecânica pelos dados** (o artigo Basilio2026, Tabela 3, a classifica como coluna). Nenhuma
 variável diz "célula" ou "coluna", mas: o circuito tem as mesmas 11 unidades da B5 (1º/2º Rougher, 1º/2º Cleaner,

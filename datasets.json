@@ -1,6 +1,12 @@
 {
   "B1": {
     "tecnologia": "celulas mecanicas",
+    "origem": {
+      "empresa": "Vale",
+      "usina": "Timbopeba",
+      "local": "Ouro Preto, MG",
+      "trabalho": "mesma usina e tags (TO_...) do TCC de Julia Silva Reis (UFOP, 2026), em periodo maior (o TCC cobre 22/11/2024-26/07/2025)"
+    },
     "publica": false,
     "frequencia": "2h",
     "bruto": {
@@ -45,6 +51,12 @@
   },
   "B2": {
     "tecnologia": "colunas de flotacao",
+    "origem": {
+      "empresa": null,
+      "usina": "nao identificada",
+      "local": null,
+      "trabalho": "Kaggle, Quality Prediction in a Mining Process (publica)"
+    },
     "publica": true,
     "fonte_publica": "Kaggle - Quality Prediction in a Mining Process (agregado por hora)",
     "frequencia": "h",
@@ -75,6 +87,12 @@
   },
   "B3": {
     "tecnologia": "celulas mecanicas (pelos dados; o artigo Basilio2026 diz colunas)",
+    "origem": {
+      "empresa": "Vale",
+      "usina": "Conceicao II (inferido pelos dados)",
+      "local": "Itabira, MG",
+      "trabalho": "fornecedor a confirmar; tags CX1430CN da mesma area da B5 e arquivo original Flotacao_conceicao_II_all.csv"
+    },
     "publica": false,
     "frequencia": "2h",
     "frequencia_bruto": "h",
@@ -117,6 +135,12 @@
   },
   "B4": {
     "tecnologia": "celulas mecanicas (subconjunto continuo da B1, tags renomeadas)",
+    "origem": {
+      "empresa": "Vale",
+      "usina": "Timbopeba",
+      "local": "Ouro Preto, MG",
+      "trabalho": "TCC de Julia Silva Reis (Eng. Controle e Automacao, UFOP, 2026): dados_consolidados_com_MM.csv gerado pelo notebook de limpeza dela"
+    },
     "publica": false,
     "frequencia": "2h",
     "bruto": {
@@ -165,6 +189,12 @@
   },
   "B5": {
     "tecnologia": "celulas mecanicas",
+    "origem": {
+      "empresa": "Vale",
+      "usina": "Conceicao II",
+      "local": "Itabira, MG",
+      "trabalho": "dissertacao de Erick Guedes (PROFICAM, UFOP/ITV, 2020)"
+    },
     "publica": false,
     "frequencia": "2h",
     "bruto": {
