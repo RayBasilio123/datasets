@@ -104,7 +104,8 @@ frequência (de 15 s a ~1,5 h). Elas estão aqui em três arquivos:
 | Arquivo | O que é |
 |---|---|
 | `raw/B5_I_Conceicao_longo.parquet` | **Bruto sem perda.** Uma linha por medição (11,5 milhões): `variavel`, `data_hora`, `valor`, `valor_texto`. |
-| `raw/B5_I_Conceicao_variaveis.csv` | Dicionário: nome original, coluna no xlsx, nº de amostras, período, intervalo mediano, mín./máx. |
+| `raw/B5_I_Conceicao_variaveis.csv` | Dicionário: nome descritivo (célula + variável), equipamento, **tag do PIMS**, nome original, coluna no xlsx, nº de amostras, período, intervalo mediano, mín./máx. |
+| `raw/B5_laboratorio.csv` | As **9 análises de laboratório** (formato longo: `variavel`, `tag_pims`, `data_hora`, `valor`): Fe, SiO₂ e +0,15 mm da alimentação; Fe e SiO₂ da carga circulante, do rejeito e do concentrado. |
 | `processed/covariaveis/B5_2h.parquet` | **Pronto para modelar.** 1.812 linhas na mesma grade de `processed/silica/B5.parquet`: `data_hora`, `silica`, `ferro` e as 65 variáveis (`v01_nivel` … `v65_abertura_valvula_ar`). |
 
 ```python
@@ -161,6 +162,7 @@ Cuidados:
 | `processed/silica/B5.parquet` | `.../erickguedes_silica.parquet` |
 | `processed/ferro/Bn.parquet` | `Basilio2026/data/processed_gluonts_usina_ferro/Bn_ferro.parquet` |
 | `raw/B5_I_Conceicao_longo.parquet`, `raw/B5_I_Conceicao_variaveis.csv`, `processed/covariaveis/B5_2h.parquet` | `eguedes/mestrado_itv/dados/I_Conceicao.xlsx` (dissertação de Erick Guedes, ITV), aba `Dados_Flotacao_ConceicaoII_mod4` |
+| `raw/B5_laboratorio.csv`, tags do PIMS no dicionário | `Dados_Flotacao_ConceicaoII_mod3.csv` e `Dados_Conceicao_*.xlsx` da pasta original do Erick (OneDrive), via `scripts/b5_laboratorio_e_tags.py` |
 
 Os parquets antigos `aggregated_silica.parquet` (B1 constante, todo igual a 4.0) e
 `jvale2h_silica.parquet` (B4 com sub-séries espúrias) estavam corrompidos e **não**
@@ -168,8 +170,10 @@ estão aqui.
 
 ## Pendências
 
-- **Equipamento de cada variável da B5**: os nomes originais se repetem
-  ("Nivel de espuma" aparece 10 vezes). O mapeamento para célula/banco está nos
-  notebooks e na dissertação de Erick Guedes; até lá, use o número `vNN`.
+- **Equipamento de cada variável da B5: resolvido.** O dicionário traz célula,
+  equipamento e tag do PIMS de cada `vNN`, lidos dos arquivos originais por
+  equipamento. A `v58_nivel` é na verdade a válvula dardo 1 da S2B2.
+- **Carga circulante**: a tag `P_SC1CN_*` foi lida como carga circulante por
+  eliminação (a dissertação cita alimentação, carga circulante e rejeito); confirmar.
 - **Tabela 3 do artigo**: diz 52 colunas para a B4 (o bruto tem 41) e 73 para a
   B5. Conferir.
